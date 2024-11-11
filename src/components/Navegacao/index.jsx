@@ -6,7 +6,7 @@ export const Navegacao = ({ user, handleSair }) => {
         <nav className="">
             <div className="navbar d-flex justify-content-center gap-4 mb-4">
                 {user ?
-                    <span className="fs-4 fw-bold" onClick={handleSair}>Sair</span>
+                    <span className="fs-4 fw-bold btn" onClick={handleSair}>Sair</span>
                     :
                     <Link className="navbar-link text-dark fw-bold fs-4"
                         style={{ textDecoration: 'none' }}
@@ -19,6 +19,12 @@ export const Navegacao = ({ user, handleSair }) => {
                     style={{ textDecoration: 'none' }}
                     to='/cadastro'>
                     Cadastro
+                </Link>}
+
+                {user && <Link className="navbar-link text-dark fw-bold fs-4"
+                    style={{ textDecoration: 'none' }}
+                    to='/alunos'>
+                    Lista de alunos
                 </Link>}
 
                 {user && <Link className="navbar-link text-dark fw-bold fs-4"

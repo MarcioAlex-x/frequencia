@@ -26,12 +26,14 @@ export const Aluno = () => {
         const db = getDatabase()
         const alunoRef = ref(db, `alunos/${id}`)
 
+
+
         onValue(alunoRef, (snapshot) => {
             const data = snapshot.val()
             if (data) {
                 setAluno(data)
                 setNotas(data.notas || [])
-                // Captura a presença diretamente
+                
                 setPresenca(data.presenca || {})
             }
         })
@@ -94,7 +96,7 @@ export const Aluno = () => {
                         ></textarea>
                     </div>
                     <div className="px-3">
-                        <button className="btn btn-primary w-100 btn-sm mt-3" onClick={handleAddNota}>Adicionar Nota</button>
+                        {!novaNota ? <button className="btn btn-secondary w-100 btn-sm mt-3 disabled" onClick={handleAddNota}>Informe a nota</button> : <button className="btn btn-primary w-100 btn-sm mt-3" onClick={handleAddNota}>Adicionar Nota</button> }
                     </div>
                 
             </div>

@@ -4,6 +4,7 @@ import { Frequencia } from '../pages/Frequencia'
 import { CadastroAluno } from '../pages/CadastroAluno'
 import { Navegacao } from '../components/Navegacao'
 import { Aluno } from '../pages/Aluno'
+import { Alunos } from '../pages/Alunos'
 import { app } from '../config/firebase'
 import { verifyAuth } from '../config/auth'
 import{ getAuth, signOut } from 'firebase/auth' 
@@ -42,6 +43,7 @@ export const Rotas = () =>{
                     {user && <Route path='/frequencia' element={user ? <Frequencia /> : <Navigate to='/' /> } />}
                     {user && <Route path='/cadastro' element={user ? <CadastroAluno /> : <Navigate to ='/' />} />}
                     { user && <Route path='/aluno/:id' element={user ? <Aluno /> : <Navigate to='/' />} />}
+                    {user && <Route path='/alunos' element={user ? <Alunos /> : <Navigate to='/' />} />}
                 </Routes>
             </Router>
         </>

@@ -62,21 +62,7 @@ export const CadastroAluno = () => {
             <div>
                 <input className="btn btn-primary d-block w-100 mx-auto mt-3" type="submit" value="Salvar" onClick={handleCadastro} />
             </div>
-            <div className="border rounded p-5 shadow my-5">
-                <ul className="list-group">
-                    {alunos.map((aluno) => (
-                        <li key={aluno.alunoId} className="list-group-item d-flex align-items-center justify-content-between">
-                            {aluno.nome}
-                            <button
-                                className="btn btn-sm btn-outline-success"
-                                onClick={()=>navigate(`/aluno/${aluno.id}`)}>
-                                Acompanhar
-                            </button>
-
-                        </li>
-                    ))}
-                </ul>
-            </div>
+            
 
         </div>
     )
