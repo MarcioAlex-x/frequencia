@@ -66,6 +66,7 @@ export const Frequencia = () => {
     return (
         <div className="container">
             <h2 className="text-center my-2">Frequência</h2>
+            <p className="text-center">Ao marcar o aluno receberá presença no dia selecionado</p>
             {user ? (
                 <p className="text-center text-success">Logado como {user.email}</p>
             ) : (
